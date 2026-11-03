@@ -1,0 +1,28 @@
+[project]
+name = "cl-core-ig-agents"
+version = "0.1.0"
+description = "Agentes que generan Guías de Implementación FHIR sobre CL Core con bucle de validación."
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.40",
+    "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+libro = ["openpyxl>=3.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 110
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []

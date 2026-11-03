@@ -1,0 +1,42 @@
+DemoPresionArterial : Validation Results
+=========================================
+
+err = 15, warn = 7, info = 3
+IG Publisher Version: 2.0.17 Out of date - current version is 2.3.4
+Generated Thu Oct 01 16:33:44 UTC 2026. FHIR version 4.0.1 for demo.cl.presionarterial#0.1.0 (canonical = https://example.org/fhir/ig/presion-arterial)
+ Build Errors : 0 / 4 / 0
+ /ig/fsh-generated/resources/ImplementationGuide-demo.cl.presionarterial : 1 / 1 / 1
+ /ig/fsh-generated/resources/Observation-PresionArterialDemo : 7 / 1 / 2
+ /ig/fsh-generated/resources/Patient-PacienteDemo : 0 / 1 / 1
+ /ig/fsh-generated/resources/StructureDefinition-cl-presion-arterial : 7 / 0 / 4
+</table>
+== n/a ==
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+== fsh-generated/resources/ImplementationGuide-demo.cl.presionarterial.json ==
+ERROR: ImplementationGuide/demo.cl.presionarterial: ImplementationGuide.jurisdiction[0]: Error from https://tx.fhir.org/r4: Error: The cache 'b4738921-49f7-4d4a-94bf-3a1343bffd26' was never issued by this server, and this server has no record of it ever existing. Caches are created with $cache-control?mode=start, and a cache-id is only valid on the server instance and endpoint that issued it - either it was issued somewhere else, or this server has restarted since it was issued
+WARNING: ImplementationGuide/demo.cl.presionarterial: ImplementationGuide.dependsOn[2]: The ImplementationGuide uses package hl7.fhir.cl.clcore#1.9.3 released on 2025-06-02, but the most recent appropriate version is 1.9.4. This reference is getting old and the more recent version should be considered
+== fsh-generated/resources/Observation-PresionArterialDemo.json ==
+ERROR: Observation/PresionArterialDemo: Observation.code.coding[0]: java.net.SocketTimeoutException: timeout
+ERROR: Observation/PresionArterialDemo: Observation.component[0].code.coding[0]: java.net.SocketTimeoutException: timeout
+ERROR: Observation/PresionArterialDemo: Observation.component[0].value.ofType(Quantity): El Coding provisto (http://unitsofmeasure.org#mm[Hg]) no está en el conjunto de valores'Vital Signs Units' (http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1), y se requiere un código de este conjunto de valores:  (error message = Error from https://tx.fhir.org/r4: Error: The cache 'b4738921-49f7-4d4a-94bf-3a1343bffd26' was never issued by this server, and this server has no record of it ever existing. Caches are created with $cache-control?mode=start, and a cache-id is only valid on the server instance and endpoint that issued it - either it was issued somewhere else, or this server has restarted since it was issued)
+ERROR: Observation/PresionArterialDemo: Observation.component[1].code.coding[0]: java.net.SocketTimeoutException: timeout
+ERROR: Observation/PresionArterialDemo: Observation.component[1].value.ofType(Quantity): El Coding provisto (http://unitsofmeasure.org#mm[Hg]) no está en el conjunto de valores'Vital Signs Units' (http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1), y se requiere un código de este conjunto de valores:  (error message = Error from https://tx.fhir.org/r4: Error: The cache 'b4738921-49f7-4d4a-94bf-3a1343bffd26' was never issued by this server, and this server has no record of it ever existing. Caches are created with $cache-control?mode=start, and a cache-id is only valid on the server instance and endpoint that issued it - either it was issued somewhere else, or this server has restarted since it was issued)
+ERROR: Observation/PresionArterialDemo: Observation.component[0].value.ofType(Quantity): Observation.component:SystolicBP.value[x].unit: mínimo requerido = 1, pero sólo se han encontrado 0 (de http://hl7.org/fhir/StructureDefinition/bp|4.0.1)
+ERROR: Observation/PresionArterialDemo: Observation.component[1].value.ofType(Quantity): Observation.component:DiastolicBP.value[x].unit: mínimo requerido = 1, pero sólo se han encontrado 0 (de http://hl7.org/fhir/StructureDefinition/bp|4.0.1)
+WARNING: Observation/PresionArterialDemo: Observation: Todos los recursos Observation deben tener un elemento performer
+== fsh-generated/resources/Patient-PacienteDemo.json ==
+WARNING: Patient/PacienteDemo: Patient.identifier[0].system: El valor URL 'http://regcivil.cl/Validacion/RUN' no puede resolverse
+== fsh-generated/resources/StructureDefinition-cl-presion-arterial.json ==
+ERROR: StructureDefinition/cl-presion-arterial: StructureDefinition.jurisdiction[0]: Error from https://tx.fhir.org/r4: Error: The cache 'b4738921-49f7-4d4a-94bf-3a1343bffd26' was never issued by this server, and this server has no record of it ever existing. Caches are created with $cache-control?mode=start, and a cache-id is only valid on the server instance and endpoint that issued it - either it was issued somewhere else, or this server has restarted since it was issued
+INFORMATION: StructureDefinition/cl-presion-arterial: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
+ERROR: StructureDefinition/cl-presion-arterial: StructureDefinition.snapshot.element[26].pattern.ofType(CodeableConcept).coding[0]: java.net.SocketTimeoutException: timeout
+ERROR: StructureDefinition/cl-presion-arterial: StructureDefinition.snapshot.element[66].pattern.ofType(CodeableConcept).coding[0]: java.net.SocketTimeoutException: timeout
+ERROR: StructureDefinition/cl-presion-arterial: StructureDefinition.snapshot.element[82].pattern.ofType(CodeableConcept).coding[0]: java.net.SocketTimeoutException: timeout
+ERROR: StructureDefinition/cl-presion-arterial: StructureDefinition.differential.element[1].pattern.ofType(CodeableConcept).coding[0]: java.net.SocketTimeoutException: timeout
+ERROR: StructureDefinition/cl-presion-arterial: StructureDefinition.differential.element[4].pattern.ofType(CodeableConcept).coding[0]: java.net.SocketTimeoutException: timeout
+ERROR: StructureDefinition/cl-presion-arterial: StructureDefinition.differential.element[10].pattern.ofType(CodeableConcept).coding[0]: java.net.SocketTimeoutException: timeout
+INFORMATION: StructureDefinition/cl-presion-arterial: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/cl-presion-arterial: StructureDefinition.snapshot.element[53].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)

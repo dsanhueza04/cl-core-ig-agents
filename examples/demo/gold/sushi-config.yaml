@@ -1,0 +1,30 @@
+# IG mínimo de referencia ("gold") — caso de demostración: registro de presión arterial.
+# Datos 100 % sintéticos. Canonical de ejemplo (example.org), no corresponde a ninguna organización.
+id: demo.cl.presionarterial
+canonical: https://example.org/fhir/ig/presion-arterial
+name: DemoPresionArterial
+title: "Demo: registro de presión arterial sobre CL Core"
+description: "IG mínimo de demostración generado y validado con el flujo de cl-core-ig-agents. Define un perfil de presión arterial sobre cl-core-signos-vitales de CL Core 1.9.3, con ejemplos sintéticos."
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2026+
+releaseLabel: ci-build
+license: CC0-1.0
+jurisdiction: urn:iso:std:iso:3166#CL "Chile"
+publisher:
+  name: cl-core-ig-agents (proyecto independiente)
+
+dependencies:
+  hl7.fhir.cl.clcore: 1.9.3
+
+pages:
+  index.md:
+    title: Inicio
+
+menu:
+  Inicio: index.html
+  Artefactos: artifacts.html
+
+instanceOptions:
+  manualSliceOrdering: true

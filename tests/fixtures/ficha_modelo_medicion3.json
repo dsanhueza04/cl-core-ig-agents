@@ -1,0 +1,32 @@
+{
+  "paciente_ejemplo": {
+    "id": "PacienteEjemploUno",
+    "run": "11.111.111-1",
+    "nombres": ["Ana"],
+    "primer_apellido": "Pérez",
+    "segundo_apellido": "González",
+    "sexo": "female",
+    "fecha_nacimiento": "1970-01-01"
+  },
+  "observaciones": [
+    {
+      "nombre": "CLPresionArterial",
+      "id": "cl-presion-arterial",
+      "titulo": "Presión arterial",
+      "descripcion": "Medición de presión arterial (LOINC 85354-9) con sus dos componentes: componente sistólica y diastólica. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "85354-9",
+      "componentes": [
+        {"nombre": "presion_sistolica", "etiqueta": "presión arterial sistólica", "loinc": "8480-6", "unidad": "mmHg", "ucum": "mm[Hg]", "obligatorio": true},
+        {"nombre": "presion_diastolica", "etiqueta": "presión arterial diastólica", "loinc": "8462-4", "unidad": "mmHg", "ucum": "mm[Hg]", "obligatorio": true}
+      ],
+      "ejemplo": {
+        "id": "PresionEjemplo",
+        "titulo": "Presión arterial 120/80 mmHg (ejemplo sintético)",
+        "descripcion": "Medición de presión arterial de un paciente ficticio: 120/80 mmHg.",
+        "fecha": "2023-03-15T10:30:00-03:00",
+        "valor": {"presion_sistolica": 120, "presion_diastolica": 80}
+      }
+    }
+  ]
+}

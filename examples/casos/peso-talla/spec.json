@@ -1,0 +1,55 @@
+{
+  "paciente_ejemplo": {
+    "id": "PacienteDemo",
+    "run": "11.111.111-1",
+    "nombres": [
+      "Camila"
+    ],
+    "primer_apellido": "Pérez",
+    "segundo_apellido": "Soto",
+    "sexo": "female",
+    "fecha_nacimiento": "1975-06-12"
+  },
+  "observaciones": [
+    {
+      "nombre": "CLPesoCorporal",
+      "id": "cl-peso-corporal",
+      "titulo": "Peso corporal",
+      "descripcion": "Medición de peso corporal (LOINC 29463-7), en kilogramos. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "29463-7",
+      "texto_codigo": "Peso corporal",
+      "valor": {
+        "unidad": "kg",
+        "ucum": "kg"
+      },
+      "ejemplo": {
+        "id": "PesoCorporalEjemplo",
+        "titulo": "Peso corporal 68,5 kg (ejemplo sintético)",
+        "descripcion": "Medición de peso de un paciente ficticio: 68,5 kg.",
+        "fecha": "2026-03-15T09:30:00-03:00",
+        "valor": 68.5
+      }
+    },
+    {
+      "nombre": "CLTallaCorporal",
+      "id": "cl-talla-corporal",
+      "titulo": "Talla",
+      "descripcion": "Medición de talla o estatura de pie (LOINC 8302-2), en centímetros. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "8302-2",
+      "texto_codigo": "Talla",
+      "valor": {
+        "unidad": "cm",
+        "ucum": "cm"
+      },
+      "ejemplo": {
+        "id": "TallaCorporalEjemplo",
+        "titulo": "Talla 165 cm (ejemplo sintético)",
+        "descripcion": "Medición de talla de un paciente ficticio: 165 cm.",
+        "fecha": "2026-03-15T09:35:00-03:00",
+        "valor": 165
+      }
+    }
+  ]
+}

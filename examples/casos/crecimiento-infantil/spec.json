@@ -1,0 +1,55 @@
+{
+  "paciente_ejemplo": {
+    "id": "PacienteDemo",
+    "run": "11.111.111-1",
+    "nombres": [
+      "Camila"
+    ],
+    "primer_apellido": "Pérez",
+    "segundo_apellido": "Soto",
+    "sexo": "female",
+    "fecha_nacimiento": "1975-06-12"
+  },
+  "observaciones": [
+    {
+      "nombre": "CLPerimetroCefalico",
+      "id": "cl-perimetro-cefalico",
+      "titulo": "Perímetro cefálico",
+      "descripcion": "Medición del perímetro cefálico (LOINC 9843-4), en centímetros. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "9843-4",
+      "texto_codigo": "Perímetro cefálico",
+      "valor": {
+        "unidad": "cm",
+        "ucum": "cm"
+      },
+      "ejemplo": {
+        "id": "PerimetroCefalicoEjemplo",
+        "titulo": "Perímetro cefálico 34,5 cm (ejemplo sintético)",
+        "descripcion": "Medición de perímetro cefálico de un paciente ficticio: 34,5 cm.",
+        "fecha": "2026-05-20T10:00:00-04:00",
+        "valor": 34.5
+      }
+    },
+    {
+      "nombre": "CLIndiceMasaCorporal",
+      "id": "cl-indice-masa-corporal",
+      "titulo": "Índice de masa corporal",
+      "descripcion": "Índice de masa corporal (LOINC 39156-5), en kg/m2. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "39156-5",
+      "texto_codigo": "Índice de masa corporal",
+      "valor": {
+        "unidad": "kg/m2",
+        "ucum": "kg/m2"
+      },
+      "ejemplo": {
+        "id": "IndiceMasaCorporalEjemplo",
+        "titulo": "IMC 22,4 kg/m2 (ejemplo sintético)",
+        "descripcion": "Índice de masa corporal de un paciente ficticio: 22,4 kg/m2.",
+        "fecha": "2026-05-20T10:00:00-04:00",
+        "valor": 22.4
+      }
+    }
+  ]
+}

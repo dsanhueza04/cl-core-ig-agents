@@ -1,0 +1,35 @@
+{
+  "paciente_ejemplo": {
+    "id": "PacienteDemo",
+    "run": "11.111.111-1",
+    "nombres": [
+      "Camila"
+    ],
+    "primer_apellido": "Pérez",
+    "segundo_apellido": "Soto",
+    "sexo": "female",
+    "fecha_nacimiento": "1975-06-12"
+  },
+  "observaciones": [
+    {
+      "nombre": "CLSaturacionOxigeno",
+      "id": "cl-saturacion-oxigeno",
+      "titulo": "Saturación de oxígeno",
+      "descripcion": "Medición de saturación de oxígeno por oximetría de pulso (LOINC 59408-5), en porcentaje. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "59408-5",
+      "texto_codigo": "Saturación de oxígeno por oximetría de pulso",
+      "valor": {
+        "unidad": "%",
+        "ucum": "%"
+      },
+      "ejemplo": {
+        "id": "SaturacionOxigenoEjemplo",
+        "titulo": "Saturación de oxígeno 97 % (ejemplo sintético)",
+        "descripcion": "Medición de saturación de oxígeno de un paciente ficticio: 97 %.",
+        "fecha": "2026-03-15T09:30:00-03:00",
+        "valor": 97
+      }
+    }
+  ]
+}

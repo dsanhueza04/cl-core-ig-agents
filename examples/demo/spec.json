@@ -1,0 +1,33 @@
+{
+  "paciente_ejemplo": {
+    "id": "PacienteDemo",
+    "run": "11.111.111-1",
+    "nombres": ["Camila"],
+    "primer_apellido": "Pérez",
+    "segundo_apellido": "Soto",
+    "sexo": "female",
+    "fecha_nacimiento": "1975-06-12"
+  },
+  "observaciones": [
+    {
+      "nombre": "CLPresionArterial",
+      "id": "cl-presion-arterial",
+      "titulo": "Presión arterial (demo)",
+      "descripcion": "Medición de presión arterial como panel LOINC 85354-9 con dos componentes obligatorios: presión sistólica y diastólica, ambas en mmHg. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "85354-9",
+      "texto_codigo": "Presión arterial",
+      "componentes": [
+        {"nombre": "sistolica", "etiqueta": "sistólica", "loinc": "8480-6", "unidad": "mmHg", "ucum": "mm[Hg]", "obligatorio": true},
+        {"nombre": "diastolica", "etiqueta": "diastólica", "loinc": "8462-4", "unidad": "mmHg", "ucum": "mm[Hg]", "obligatorio": true}
+      ],
+      "ejemplo": {
+        "id": "PresionArterialDemo",
+        "titulo": "Presión arterial 128/82 mmHg (ejemplo sintético)",
+        "descripcion": "Medición de presión arterial de un paciente ficticio: sistólica 128 mmHg y diastólica 82 mmHg.",
+        "fecha": "2026-03-15T09:30:00-03:00",
+        "valores": {"sistolica": 128, "diastolica": 82}
+      }
+    }
+  ]
+}

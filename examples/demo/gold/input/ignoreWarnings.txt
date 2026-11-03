@@ -1,0 +1,4 @@
+== Suppressed Messages ==
+
+# Aquí se agregan mensajes ya revisados que no son un problema real,
+# siempre con un comentario que justifique cada supresión.

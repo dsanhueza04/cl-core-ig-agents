@@ -1,0 +1,23 @@
+  File: /ig/input/fsh/perfiles.fsh
+  Line: 8
+info  Converted 1 FHIR StructureDefinitions.
+error The element or path you referenced does not exist: name[NombreOficial].extension:segundoApellido.valueString
+  File: /ig/input/fsh/ejemplos.fsh
+  Line: 15
+error Cannot find definition for Instance: "http://unitsofmeasure.org",. Skipping rule.
+  File: /ig/input/fsh/ejemplos.fsh
+  Line: 27
+error Element Observation.subject has minimum cardinality 1 but occurs 0 time(s).
+  File: /ig/input/fsh/ejemplos.fsh
+  Line: 19 - 27
+error Element Observation.effective[x] has minimum cardinality 1 but occurs 0 time(s).
+  File: /ig/input/fsh/ejemplos.fsh
+  Line: 19 - 27
+info  Converted 2 FHIR instances.
+info  Exporting FHIR resources as JSON...
+info  Exported 3 FHIR resources as JSON.
+info  Assembling Implementation Guide sources...
+
+========================= SUSHI RESULTS ===========================
+| Dolphinately not the desired outcome.   7 Errors      0 Warnings |
+===================================================================

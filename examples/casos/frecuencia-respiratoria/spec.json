@@ -1,0 +1,35 @@
+{
+  "paciente_ejemplo": {
+    "id": "PacienteDemo",
+    "run": "11.111.111-1",
+    "nombres": [
+      "Camila"
+    ],
+    "primer_apellido": "Pérez",
+    "segundo_apellido": "Soto",
+    "sexo": "female",
+    "fecha_nacimiento": "1975-06-12"
+  },
+  "observaciones": [
+    {
+      "nombre": "CLFrecuenciaRespiratoria",
+      "id": "cl-frecuencia-respiratoria",
+      "titulo": "Frecuencia respiratoria",
+      "descripcion": "Medición de frecuencia respiratoria (LOINC 9279-1) en respiraciones por minuto. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "9279-1",
+      "texto_codigo": "Frecuencia respiratoria",
+      "valor": {
+        "unidad": "rpm",
+        "ucum": "/min"
+      },
+      "ejemplo": {
+        "id": "FrecuenciaRespiratoriaEjemplo",
+        "titulo": "Frecuencia respiratoria 16 rpm (ejemplo sintético)",
+        "descripcion": "Medición de frecuencia respiratoria de un paciente ficticio: 16 rpm.",
+        "fecha": "2026-05-20T10:00:00-04:00",
+        "valor": 16
+      }
+    }
+  ]
+}

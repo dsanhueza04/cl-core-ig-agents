@@ -1,0 +1,31 @@
+DemoPresionArterial : Validation Results
+=========================================
+
+err = 0, warn = 7, info = 7
+IG Publisher Version: 2.3.4
+Generated Thu Oct 01 18:47:15 UTC 2026. FHIR version 4.0.1 for demo.cl.presionarterial#0.1.0 (canonical = https://example.org/fhir/ig/presion-arterial)
+ Build Errors : 0 / 4 / 0
+ /ig/fsh-generated/resources/ImplementationGuide-demo.cl.presionarterial : 0 / 1 / 3
+ /ig/fsh-generated/resources/Observation-PresionArterialDemo : 0 / 1 / 2
+ /ig/fsh-generated/resources/Patient-PacienteDemo : 0 / 1 / 1
+ /ig/fsh-generated/resources/StructureDefinition-cl-presion-arterial : 0 / 0 / 6
+</table>
+== n/a ==
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+== fsh-generated/resources/ImplementationGuide-demo.cl.presionarterial.json ==
+INFORMATION: ImplementationGuide/demo.cl.presionarterial: ImplementationGuide.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#CL for language(s) 'es-CL'. The display is 'Chile' which is a valid display for the default language
+WARNING: ImplementationGuide/demo.cl.presionarterial: ImplementationGuide.dependsOn[2]: The ImplementationGuide uses package hl7.fhir.cl.clcore#1.9.3 released on 2025-06-02, but the most recent appropriate version is 1.9.4. This reference is getting old and the more recent version should be considered
+INFORMATION: Resource: The resource ImplementationGuide/demo.cl.presionarterial could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== fsh-generated/resources/Observation-PresionArterialDemo.json ==
+WARNING: Observation/PresionArterialDemo: Observation: Todos los recursos Observation deben tener un elemento performer
+== fsh-generated/resources/Patient-PacienteDemo.json ==
+WARNING: Patient/PacienteDemo: Patient.identifier[0].system: El valor URL 'http://regcivil.cl/Validacion/RUN' no puede resolverse
+== fsh-generated/resources/StructureDefinition-cl-presion-arterial.json ==
+INFORMATION: StructureDefinition/cl-presion-arterial: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#CL for language(s) 'es-CL'. The display is 'Chile' which is a valid display for the default language
+INFORMATION: StructureDefinition/cl-presion-arterial: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
+INFORMATION: StructureDefinition/cl-presion-arterial: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/cl-presion-arterial: StructureDefinition.snapshot.element[53].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: Resource: The resource StructureDefinition/cl-presion-arterial could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)

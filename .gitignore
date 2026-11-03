@@ -1,0 +1,50 @@
+# --- Material de referencia (no se redistribuye) ---
+# CL Core 1.9.3 se referencia por nombre y versión, no se copia al repo.
+reference/*
+!reference/README.md
+
+# --- Salidas generadas ---
+build/
+output/
+temp/
+fsh-generated/
+input-cache/
+**/output/
+**/temp/
+**/fsh-generated/
+**/input-cache/
+*.jar
+
+# --- Plantillas y paquetes descargados (son de terceros: HL7, etc.) ---
+examples/**/template/
+*.tgz
+
+# --- Libros de prueba personales (los de ejemplo viven en examples/) ---
+/mi-*.xlsx
+*-[0-9].xlsx
+_to_delete/
+
+# --- Registro de costos y corridas locales ---
+runs/
+*.jsonl
+
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# --- Secretos ---
+.env
+.env.*
+!.env.example
+
+# --- Editor / SO ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

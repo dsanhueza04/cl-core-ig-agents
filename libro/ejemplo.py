@@ -1,0 +1,125 @@
+"""Libro de ejemplo 100 % sintético: control de frecuencia cardíaca con terminología propia.
+
+Sirve para probar la herramienta de punta a punta. Los datos son ficticios; no viene de ningún proyecto real.
+"""
+from __future__ import annotations
+
+CLCORE_DNI = "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoDNI"
+CAT_OBS = "http://terminology.hl7.org/CodeSystem/observation-category"
+
+DATOS = {
+    "Guía": {
+        "id": "control-frecuencia-demo", "titulo": "Control de frecuencia cardíaca (demo)",
+        "descripcion": "Guía de ejemplo, con datos ficticios, que define cómo registrar una medición de frecuencia cardíaca y el contexto en que se tomó.",
+        "canonical": "https://example.org/fhir/ig/control-frecuencia-demo", "version": "0.1.0", "estado": "draft",
+        "publicador": "Proyecto de demostración", "licencia": "CC0-1.0", "usa_clcore": "Sí",
+    },
+    "Perfiles": [
+        {"nombre": "PacienteControl", "recurso": "Patient", "padre": "CorePacienteCl", "titulo": "Paciente del control (demo)",
+         "descripcion": "Paciente chileno cuyo control se registra; exige sexo y fecha de nacimiento.",
+         "justificacion": "Sin estos dos datos no se puede interpretar la frecuencia cardíaca según edad."},
+        {"nombre": "FrecuenciaCardiacaControl", "recurso": "Observation", "padre": "cl-core-signos-vitales",
+         "titulo": "Frecuencia cardíaca del control (demo)",
+         "descripcion": "Medición de frecuencia cardíaca en latidos por minuto, con el contexto en que se tomó."},
+        {"nombre": "DoctorControl", "recurso": "Practitioner", "padre": "CorePrestadorCl", "titulo": "Prestador del control (demo)",
+         "descripcion": "Profesional que toma la medición; datos de nacimiento y sexo opcionales."},
+    ],
+    "Elementos": [
+        {"perfil": "PacienteControl", "ruta": "gender", "min": "1", "max": "1", "ms": "Sí"},
+        {"perfil": "PacienteControl", "ruta": "birthDate", "min": "1", "max": "1", "ms": "Sí"},
+        {"perfil": "PacienteControl", "ruta": "extension[aniosEscolaridad]", "min": "0", "max": "1", "ms": "Sí"},
+        {"perfil": "PacienteControl", "ruta": "extension[contactoPreferido]", "min": "0", "max": "1"},
+        {"perfil": "DoctorControl", "ruta": "gender", "min": "0", "max": "1"},
+        {"perfil": "DoctorControl", "ruta": "birthDate", "min": "0", "max": "1"},
+        {"perfil": "FrecuenciaCardiacaControl", "ruta": "code", "fijo": "8867-4", "fijo_tipo": "código con sistema", "fijo_sistema": "LOINC"},
+        {"perfil": "FrecuenciaCardiacaControl", "ruta": "subject", "min": "1", "max": "1", "ms": "Sí"},
+        {"perfil": "FrecuenciaCardiacaControl", "ruta": "valueQuantity", "min": "1", "max": "1", "ms": "Sí"},
+        {"perfil": "FrecuenciaCardiacaControl", "ruta": "value[x]", "tipo": "Quantity"},
+        {"perfil": "FrecuenciaCardiacaControl", "ruta": "valueQuantity.system", "fijo": "http://unitsofmeasure.org", "fijo_tipo": "texto"},
+        {"perfil": "FrecuenciaCardiacaControl", "ruta": "valueQuantity.code", "fijo": "/min", "fijo_tipo": "código simple"},
+        {"perfil": "FrecuenciaCardiacaControl", "ruta": "valueQuantity.unit", "fijo": "/min", "fijo_tipo": "texto"},
+        {"perfil": "FrecuenciaCardiacaControl", "ruta": "method", "min": "0", "max": "1", "ms": "Sí", "valueset": "VSContextoMedicion",
+         "fuerza": "extensible", "justificacion": "La frecuencia en reposo y tras el ejercicio no son comparables."},
+    ],
+    "Extensiones": [
+        {"nombre": "AniosEscolaridad", "titulo": "Años de escolaridad (demo)", "descripcion": "Cantidad de años de estudio aprobados por la persona.",
+         "contexto": "Patient", "tipo": "integer"},
+        {"nombre": "ContactoPreferido", "titulo": "Contacto preferido (demo)", "descripcion": "Cómo y cuándo prefiere la persona que la contacten.",
+         "contexto": "Patient"},
+        {"nombre": "Medio", "titulo": "Medio", "descripcion": "Medio de contacto preferido (por ejemplo phone o email).",
+         "tipo": "code", "parte_de": "ContactoPreferido", "min": "1", "max": "1"},
+        {"nombre": "Horario", "titulo": "Horario", "descripcion": "Franja horaria preferida, en texto libre.",
+         "tipo": "string", "parte_de": "ContactoPreferido", "min": "0", "max": "1"},
+    ],
+    "Slices": [
+        {"perfil": "PacienteControl", "elemento": "telecom", "slice": "telefono", "min": "0", "max": "1", "ms": "Sí",
+         "discriminador": "value", "disc_ruta": "system", "fijo": "phone", "fijo_tipo": "código simple", "descripcion": "Teléfono de contacto."},
+        {"perfil": "PacienteControl", "elemento": "telecom", "slice": "correo", "min": "0", "max": "1",
+         "fijo": "email", "fijo_tipo": "código simple", "descripcion": "Correo electrónico de contacto."},
+    ],
+    "Capacidades": [{"nombre": "ServidorControles", "titulo": "Servidor de controles (demo)", "descripcion": "Lo que debe ofrecer un servidor que guarde los controles de esta guía.", "modo": "server", "formato": "json"}],
+    "RecursosCapacidad": [{"capacidad": "ServidorControles", "recurso": "Patient", "perfil": "PacienteControl", "interacciones": "read, search-type", "busquedas": "identifier:token, birthdate:date"}],
+    "Instancias": [
+        {"nombre": "PacienteDemo", "perfil": "PacienteControl", "titulo": "Paciente sintético de demostración",
+         "descripcion": "Paciente con datos ficticios. No corresponde a ninguna persona real."},
+        {"nombre": "FrecuenciaReposoDemo", "perfil": "FrecuenciaCardiacaControl", "titulo": "Frecuencia de 72 /min en reposo (ejemplo sintético)",
+         "descripcion": "Medición de un paciente ficticio, tomada en reposo."},
+        {"nombre": "DoctorDemo", "perfil": "DoctorControl", "titulo": "Prestador sintético de demostración",
+         "descripcion": "Prestador con datos ficticios. No corresponde a ninguna persona real."},
+    ],
+    "Valores": [
+        {"instancia": "PacienteDemo", "ruta": "identifier[0].use", "tipo": "código simple", "valor": "official"},
+        {"instancia": "PacienteDemo", "ruta": "identifier[0].type", "tipo": "código con sistema", "valor": "NNCHL", "sistema": CLCORE_DNI},
+        {"instancia": "PacienteDemo", "ruta": "identifier[0].system", "tipo": "texto", "valor": "http://regcivil.cl/Validacion/RUN"},
+        {"instancia": "PacienteDemo", "ruta": "identifier[0].value", "tipo": "texto", "valor": "11.111.111-1"},
+        {"instancia": "PacienteDemo", "ruta": "name[NombreOficial].use", "tipo": "código simple", "valor": "official"},
+        {"instancia": "PacienteDemo", "ruta": "name[NombreOficial].family", "tipo": "texto", "valor": "Pérez"},
+        {"instancia": "PacienteDemo", "ruta": "name[NombreOficial].given[0]", "tipo": "texto", "valor": "Camila"},
+        {"instancia": "PacienteDemo", "ruta": "gender", "tipo": "código simple", "valor": "female"},
+        {"instancia": "PacienteDemo", "ruta": "birthDate", "tipo": "fecha", "valor": "1975-06-12"},
+        {"instancia": "PacienteDemo", "ruta": "telecom[telefono].value", "tipo": "texto", "valor": "+56 9 0000 0000"},
+        {"instancia": "PacienteDemo", "ruta": "extension[aniosEscolaridad]", "tipo": "número", "valor": "12"},
+        {"instancia": "PacienteDemo", "ruta": "extension[contactoPreferido].extension[medio]", "tipo": "código simple", "valor": "phone"},
+        {"instancia": "PacienteDemo", "ruta": "extension[contactoPreferido].extension[horario]", "tipo": "texto", "valor": "Por las tardes"},
+        {"instancia": "FrecuenciaReposoDemo", "ruta": "status", "tipo": "código simple", "valor": "final"},
+        {"instancia": "FrecuenciaReposoDemo", "ruta": "category[VSCat]", "tipo": "código con sistema", "valor": "vital-signs", "sistema": CAT_OBS},
+        {"instancia": "FrecuenciaReposoDemo", "ruta": "code", "tipo": "código con sistema", "valor": "8867-4", "sistema": "LOINC"},
+        {"instancia": "FrecuenciaReposoDemo", "ruta": "code.text", "tipo": "texto", "valor": "Frecuencia cardíaca"},
+        {"instancia": "FrecuenciaReposoDemo", "ruta": "subject", "tipo": "referencia", "valor": "PacienteDemo"},
+        {"instancia": "FrecuenciaReposoDemo", "ruta": "effectiveDateTime", "tipo": "fecha y hora", "valor": "2026-03-15T09:30:00-03:00"},
+        {"instancia": "FrecuenciaReposoDemo", "ruta": "valueQuantity", "tipo": "cantidad", "valor": "72", "unidad": "/min", "texto": "/min"},
+        {"instancia": "FrecuenciaReposoDemo", "ruta": "method", "tipo": "código con sistema", "valor": "reposo", "sistema": "CSContextoMedicion", "texto": "En reposo"},
+        {"instancia": "DoctorDemo", "ruta": "identifier[0].use", "tipo": "código simple", "valor": "official"},
+        {"instancia": "DoctorDemo", "ruta": "identifier[0].type", "tipo": "código con sistema", "valor": "01",
+         "sistema": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSTipoIdentificador"},
+        {"instancia": "DoctorDemo", "ruta": "identifier[0].system", "tipo": "texto", "valor": "http://regcivil.cl/Validacion/RUN"},
+        {"instancia": "DoctorDemo", "ruta": "identifier[0].value", "tipo": "texto", "valor": "22.222.222-2"},
+        {"instancia": "DoctorDemo", "ruta": "name[0].use", "tipo": "código simple", "valor": "official"},
+        {"instancia": "DoctorDemo", "ruta": "name[0].family", "tipo": "texto", "valor": "Soto"},
+        {"instancia": "DoctorDemo", "ruta": "name[0].given[0]", "tipo": "texto", "valor": "Carlos"},
+        {"instancia": "DoctorDemo", "ruta": "gender", "tipo": "código simple", "valor": "male"},
+        {"instancia": "DoctorDemo", "ruta": "birthDate", "tipo": "fecha", "valor": "1980-01-15"},
+    ],
+    "CodeSystems": [
+        {"nombre": "CSContextoMedicion", "titulo": "Contexto de la medición (demo)",
+         "descripcion": "Situación del paciente al momento de medir la frecuencia cardíaca."},
+    ],
+    "Conceptos": [
+        {"codesystem": "CSContextoMedicion", "codigo": "reposo", "texto": "En reposo", "definicion": "Tras al menos 5 minutos sentado o acostado."},
+        {"codesystem": "CSContextoMedicion", "codigo": "ejercicio", "texto": "Durante el ejercicio"},
+        {"codesystem": "CSContextoMedicion", "codigo": "postejercicio", "texto": "Después del ejercicio"},
+    ],
+    "ValueSets": [
+        {"nombre": "VSContextoMedicion", "titulo": "Contexto de la medición (demo)", "descripcion": "Contextos permitidos para registrar la medición."},
+    ],
+    "Inclusiones": [
+        {"valueset": "VSContextoMedicion", "sistema": "CSContextoMedicion"},
+    ],
+    "Documentación": [
+        {"pagina": "inicio", "titulo": "Inicio",
+         "texto": "### Control de frecuencia cardíaca (demo)\n\nGuía de ejemplo **con datos ficticios**, creada con cl-core-ig-agents. "
+                  "Borrador: requiere revisión humana.\n\nVer los [artefactos](artifacts.html)."},
+        {"pagina": "decisiones", "titulo": "Decisiones de diseño",
+         "texto": "La frecuencia cardíaca solo es comparable si se conoce el contexto de la medición, por eso el perfil admite el elemento `method`."},
+    ],
+}

@@ -1,0 +1,75 @@
+{
+  "paciente_ejemplo": {
+    "id": "PacienteDemo",
+    "run": "11.111.111-1",
+    "nombres": [
+      "Camila"
+    ],
+    "primer_apellido": "Pérez",
+    "segundo_apellido": "Soto",
+    "sexo": "female",
+    "fecha_nacimiento": "1975-06-12"
+  },
+  "observaciones": [
+    {
+      "nombre": "CLSaturacionArterialOxigeno",
+      "id": "cl-saturacion-arterial-oxigeno",
+      "titulo": "Saturación arterial de oxígeno",
+      "descripcion": "Saturación de oxígeno en sangre arterial (LOINC 2708-6), en porcentaje. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "2708-6",
+      "texto_codigo": "Saturación arterial de oxígeno",
+      "valor": {
+        "unidad": "%",
+        "ucum": "%"
+      },
+      "ejemplo": {
+        "id": "SaturacionArterialOxigenoEjemplo",
+        "titulo": "Saturación arterial 95 % (ejemplo sintético)",
+        "descripcion": "Saturación arterial de oxígeno de un paciente ficticio: 95 %.",
+        "fecha": "2026-05-20T10:00:00-04:00",
+        "valor": 95
+      }
+    },
+    {
+      "nombre": "CLFlujoOxigeno",
+      "id": "cl-flujo-oxigeno",
+      "titulo": "Flujo de oxígeno inhalado",
+      "descripcion": "Flujo de oxígeno inhalado (LOINC 3151-8), en litros por minuto. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "3151-8",
+      "texto_codigo": "Flujo de oxígeno inhalado",
+      "valor": {
+        "unidad": "L/min",
+        "ucum": "L/min"
+      },
+      "ejemplo": {
+        "id": "FlujoOxigenoEjemplo",
+        "titulo": "Flujo de oxígeno 2 L/min (ejemplo sintético)",
+        "descripcion": "Flujo de oxígeno inhalado de un paciente ficticio: 2 L/min.",
+        "fecha": "2026-05-20T10:00:00-04:00",
+        "valor": 2
+      }
+    },
+    {
+      "nombre": "CLConcentracionOxigeno",
+      "id": "cl-concentracion-oxigeno",
+      "titulo": "Concentración de oxígeno inhalado",
+      "descripcion": "Concentración de oxígeno inhalado (LOINC 3150-0), en porcentaje. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "3150-0",
+      "texto_codigo": "Concentración de oxígeno inhalado",
+      "valor": {
+        "unidad": "%",
+        "ucum": "%"
+      },
+      "ejemplo": {
+        "id": "ConcentracionOxigenoEjemplo",
+        "titulo": "Concentración de oxígeno 28 % (ejemplo sintético)",
+        "descripcion": "Concentración de oxígeno inhalado de un paciente ficticio: 28 %.",
+        "fecha": "2026-05-20T10:00:00-04:00",
+        "valor": 28
+      }
+    }
+  ]
+}

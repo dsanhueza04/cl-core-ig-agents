@@ -1,0 +1,30 @@
+{
+  "paciente_ejemplo": {
+    "id": "PacienteEjemploUno",
+    "run": "22.222.222-2",
+    "nombres": ["Matías"],
+    "primer_apellido": "González",
+    "segundo_apellido": "Rojas",
+    "sexo": "male",
+    "fecha_nacimiento": "1988-11-03"
+  },
+  "observaciones": [
+    {
+      "nombre": "CLTemperaturaCorporal",
+      "id": "cl-temperatura-corporal",
+      "titulo": "Temperatura corporal",
+      "descripcion": "Medición de temperatura corporal (LOINC 8310-5) en grados Celsius. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "8310-5",
+      "texto_codigo": "Temperatura corporal",
+      "valor": {"unidad": "°C", "ucum": "Cel"},
+      "ejemplo": {
+        "id": "TemperaturaEjemplo",
+        "titulo": "Temperatura corporal 36,8 °C (ejemplo sintético)",
+        "descripcion": "Medición de temperatura corporal de un paciente ficticio: 36,8 °C.",
+        "fecha": "2026-04-02T08:15:00-04:00",
+        "valor": 36.8
+      }
+    }
+  ]
+}

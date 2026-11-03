@@ -1,0 +1,29 @@
+# IG generado con cl-core-ig-agents. Revisión humana pendiente antes de cualquier uso.
+id: {{id}}
+canonical: {{canonical}}
+name: {{name}}
+title: "{{title}}"
+description: "IG generado con cl-core-ig-agents sobre CL Core 1.9.3. Datos de ejemplo 100 % sintéticos."
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2026+
+releaseLabel: ci-build
+license: CC0-1.0
+jurisdiction: urn:iso:std:iso:3166#CL "Chile"
+publisher:
+  name: cl-core-ig-agents (proyecto independiente)
+
+dependencies:
+  hl7.fhir.cl.clcore: 1.9.3
+
+pages:
+  index.md:
+    title: Inicio
+
+menu:
+  Inicio: index.html
+  Artefactos: artifacts.html
+
+instanceOptions:
+  manualSliceOrdering: true

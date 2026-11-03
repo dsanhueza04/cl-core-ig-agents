@@ -1,0 +1,35 @@
+{
+  "paciente_ejemplo": {
+    "id": "PacienteDemo",
+    "run": "11.111.111-1",
+    "nombres": [
+      "Camila"
+    ],
+    "primer_apellido": "Pérez",
+    "segundo_apellido": "Soto",
+    "sexo": "female",
+    "fecha_nacimiento": "1975-06-12"
+  },
+  "observaciones": [
+    {
+      "nombre": "CLFrecuenciaCardiaca",
+      "id": "cl-frecuencia-cardiaca",
+      "titulo": "Frecuencia cardíaca",
+      "descripcion": "Medición de frecuencia cardíaca (LOINC 8867-4) en latidos por minuto. Extiende el perfil de signos vitales de CL Core.",
+      "padre": "cl-core-signos-vitales",
+      "codigo_loinc": "8867-4",
+      "texto_codigo": "Frecuencia cardíaca",
+      "valor": {
+        "unidad": "lpm",
+        "ucum": "/min"
+      },
+      "ejemplo": {
+        "id": "FrecuenciaCardiacaEjemplo",
+        "titulo": "Frecuencia cardíaca 72 lpm (ejemplo sintético)",
+        "descripcion": "Medición de frecuencia cardíaca de un paciente ficticio: 72 lpm.",
+        "fecha": "2026-03-15T09:30:00-03:00",
+        "valor": 72
+      }
+    }
+  ]
+}
