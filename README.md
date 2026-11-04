@@ -1,4 +1,4 @@
-# cl-core-ig-agents
+# cl-ig-builder
 
 **Crea Guías de Implementación FHIR R4 completando un Excel, sin escribir FSH a mano.**
 
@@ -175,6 +175,10 @@ llm/         cliente de modelos (opcional)
 scripts/     prueba de ida y vuelta, mediciones, extracción del catálogo
 examples/    libros de ejemplo y casos de medición
 docs/        documentación
+docker/      imagen de Docker con SUSHI, IG Publisher y Jekyll
+prompts/     instrucciones del camino opcional con modelo de lenguaje
+templates/   plantilla base de la guía (ig-base)
+tests/       pruebas automáticas
 ```
 
 Versiones fijadas: FHIR **R4 (4.0.1)** · CL Core **1.9.3** · SUSHI 3.20.1 · IG Publisher 2.3.4.
