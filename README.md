@@ -190,3 +190,4 @@ Versiones fijadas: FHIR **R4 (4.0.1)** · CL Core **1.9.3** · SUSHI 3.20.1 · I
 - Este repositorio **no incluye** CL Core, el IG Publisher ni SUSHI: los referencia por nombre y versión.
 - Los ejemplos usan datos sintéticos propios. El ejemplo de códigos territoriales (`examples/datos-territoriales-chile`) parte de la tabla oficial del Código Único Territorial de la administración pública chilena, actualizada a mano; revisa los nombres contra la fuente vigente antes de publicar una guía.
 - Este material contiene contenido de LOINC. LOINC es © Regenstrief Institute, Inc. y el LOINC Committee, está disponible sin costo bajo su licencia (<https://loinc.org/license>) y es una marca registrada de Regenstrief Institute en Estados Unidos.
+- HL7® y FHIR® son marcas registradas de HL7 International. Este proyecto es independiente y no está afiliado ni respaldado por HL7 International ni por HL7 Chile.
